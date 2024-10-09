@@ -1,0 +1,18 @@
+@media (max-width:770px) {
+    #navbar{
+        height: 12vh;
+    }
+  #left-nav {
+    display: none;
+  }
+  #logo {
+    font-size: 6vh;
+    left:3vw;
+  }
+  #searchIcon,#favoriteIcon{
+    display: none;
+  }
+  #menuIcon{
+    display: block;
+  }
+}

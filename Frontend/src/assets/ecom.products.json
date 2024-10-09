@@ -1,0 +1,262 @@
+[{
+  "_id": {
+    "$oid": "66f859b68653b67693b04c98"
+  },
+  "title": "Nike Air Max 270",
+  "id": 1121122,
+  "images": [],
+  "category": [
+    "Sneakers",
+    "Running"
+  ],
+  "description": "Breathable and comfortable running shoes.",
+  "price": 800,
+  "discount": 10,
+  "stock": 20,
+  "active": false,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T19:32:06.388Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T09:23:38.064Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f8616a13af41c8be08779b"
+  },
+  "title": "Adidas  Boost 350",
+  "id": 112151,
+  "images": [],
+  "category": [
+    "Sneakers",
+    " Casual"
+  ],
+  "description": "Stylish and trendy sneakers for everyday wear.",
+  "price": 920,
+  "discount": 0,
+  "stock": 30,
+  "active": false,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T20:04:58.738Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T09:23:22.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f861d913af41c8be0877a4"
+  },
+  "title": "Balenciaga Triple S",
+  "id": 5418,
+  "images": [],
+  "category": [
+    "Sneakers",
+    "Luxury"
+  ],
+  "description": "High-end sneakers with a unique design.",
+  "price": 1400,
+  "discount": 16,
+  "stock": 4,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T20:06:49.174Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-01T10:33:43.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f8621013af41c8be0877a7"
+  },
+  "title": "Nike Air Force 1",
+  "id": 1658,
+  "images": [],
+  "category": [
+    "Sneakers",
+    "Casual"
+  ],
+  "description": "Classic sneakers with a timeless design.",
+  "price": 600,
+  "discount": 14,
+  "stock": 15,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T20:07:44.359Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-01T08:39:17.180Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f8623e13af41c8be0877aa"
+  },
+  "title": "Gucci Ace",
+  "id": 654465,
+  "images": [],
+  "category": [
+    "Sneakers",
+    "Luxury"
+  ],
+  "description": "Luxury sneakers with a sleek design.",
+  "price": 2100,
+  "discount": 10,
+  "stock": 5,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T20:08:30.690Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-30T12:43:19.544Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f8627613af41c8be0877ad"
+  },
+  "title": "Jordan 1 Retro High",
+  "id": 341354,
+  "images": [],
+  "category": [
+    "Sneakers",
+    "Sports",
+    "Basketball"
+  ],
+  "description": "Iconic basketball sneakers with a retro look.",
+  "price": 4100,
+  "discount": 25,
+  "stock": 40,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T20:09:26.309Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T04:38:52.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f862f313af41c8be0877b3"
+  },
+  "title": "Adidas NMD R1",
+  "id": 5445213,
+  "images": [],
+  "category": [
+    "Sneakers",
+    "Running",
+    "Sports"
+  ],
+  "description": "Comfortable and stylish running shoes.",
+  "price": 1185,
+  "discount": 15,
+  "stock": 11,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-09-28T20:11:31.610Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T04:39:42.766Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fbcbec8b0667a451152030"
+  },
+  "title": "Campus Mens Terminator (N",
+  "id": 216541,
+  "images": [],
+  "category": [
+    "Casual",
+    "Sports"
+  ],
+  "description": "- These men's shoes are ideal for everyday wear with their breathable mesh upper, ensuring your feet stay dry and comfortable. ",
+  "price": 1599,
+  "discount": 10,
+  "stock": 30,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-10-01T10:16:12.018Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T04:39:19.149Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fbcc828b0667a45115203e"
+  },
+  "title": "Sparx Mens Sd0439gCasual ",
+  "id": 75444,
+  "images": [],
+  "category": [
+    "Men",
+    "Sports",
+    "Casuals"
+  ],
+  "description": "Allow your pair of shoes to air and de-odorize at regular basis; use shoe bags to prevent any stains or mildew",
+  "price": 1100,
+  "discount": 11,
+  "stock": 15,
+  "active": true,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-10-01T10:18:42.991Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T04:39:16.519Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fe2e8f4e037dffa7f62657"
+  },
+  "title": "Liberty",
+  "id": 54687,
+  "images": [],
+  "category": [
+    "Casual"
+  ],
+  "description": "Meet Warrior, the range of professional gear from Liberty. More than just a shoe, the Warrior ensures that workforces around the ",
+  "price": 780,
+  "discount": 10,
+  "stock": 30,
+  "active": false,
+  "unit": "pair",
+  "ownerId": "mohammedirfanrj@gmail.com",
+  "createdAt": {
+    "$date": "2024-10-03T05:41:35.716Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-03T05:45:45.579Z"
+  },
+  "__v": 0
+}]
