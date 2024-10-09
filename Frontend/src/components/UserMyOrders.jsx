@@ -3,7 +3,7 @@ import axios from 'axios';
 import { userData } from '../App';
 const fetchOrders = async(username)=>{
     try {
-      const res = await axios.get(`/apiv1/getorders/${username}`);
+      const res = await axios.get(`https://fanshoebackend.onrender.com/apiv1/getorders/${username}`);
       if(!res.data.status) throw Error("Something went wrong");
 
       return  res.data.data;
@@ -13,7 +13,7 @@ const fetchOrders = async(username)=>{
 }
 const handleCancel = async (orderId , status) =>{
   try {
-    const res = await axios.patch(`/apiv1/updateorder/${orderId}/${status}`);
+    const res = await axios.patch(`https://fanshoebackend.onrender.com/apiv1/updateorder/${orderId}/${status}`);
     if(!res.data.status) throw Error("Something went wrong");
     return  res.data.data;
   } catch (error) {

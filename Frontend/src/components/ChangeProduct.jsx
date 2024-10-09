@@ -9,7 +9,7 @@ const notify = (msg, type, theme, autoClose) => {
 
 const fetchProducts = async () => {
   try {
-    const res = await axios.get("/apiv1/getproducttoupdate");
+    const res = await axios.get("https://fanshoebackend.onrender.com/apiv1/getproducttoupdate");
     if (!res.data) throw res.data;
     // console.log(res.data)
     return res.data;
@@ -40,7 +40,7 @@ export default function ChangeProduct() {
     setIdxEdit(-1);
     try {
       // console.log(inpData);
-      const res = await axios.patch("/apiv1/updateproduct", inpData);
+      const res = await axios.patch("https://fanshoebackend.onrender.com/apiv1/updateproduct", inpData);
       //  console.log(res);
       if (!res.data.status) throw res;
                 setUpdate(true);

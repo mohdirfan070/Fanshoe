@@ -5,7 +5,7 @@ import Product from "./Product";
 
 const fetchProducts = async (id) => {
   try {
-    const res = await axios.get(`/apiv1/productsfromfav/${id}`);
+    const res = await axios.get(`https://fanshoebackend.onrender.com/apiv1/productsfromfav/${id}`);
     if (!res.data) throw new Error("No data found");
     return res.data;
   } catch (error) {

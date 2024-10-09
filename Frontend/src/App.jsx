@@ -17,7 +17,7 @@ const fetchUser = async () => {
   try {
     const value = `${document.cookie.split("=")[1].split("%20")[1]}`;
     if (value) {
-      const res = await axios.get("/apiv1/getuser");
+      const res = await axios.get("https://fanshoebackend.onrender.com/apiv1/getuser");
       return res.data.data;
     }
   } catch (error) {

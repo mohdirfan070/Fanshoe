@@ -12,7 +12,7 @@ const notify = (msg, type, theme, autoClose) => {
 
 const fetchProducts = async (page) => {
   try {
-    const res = await axios.get(`/apiv1/products/${page}`);
+    const res = await axios.get(`https://fanshoebackend.onrender.com/apiv1/products/${page}`);
     if (!res.data ) throw res;
     // console.log(res.data)
     return res.data;
