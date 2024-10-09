@@ -23,15 +23,10 @@ const getUSer = async (req, res) => {
 const updateUser = async(req,res)=>{
     const { userData } = req.dataFromAuth;
     const inpData = req.body;
-    // console.log(inpData)
-    // console.log(userData)
+  
     try {
       const response  = await User.findByIdAndUpdate(userData.id ,{name:inpData.name , username:inpData.username , age:inpData.age,address:inpData.address , mobileNumber:inpData.mobileNumber , gender:inpData.gender , pinCode:inpData.pincode});
-
- 
            await Product.findOneAndUpdate({ownerId:userData.id},{ownerId:inpData.username });
-   
-
       if(!response) throw response;
       res.json({msg:"Updated Successfull",status:true});
     } catch (response) {
@@ -47,7 +42,7 @@ const Login = async (req, res) => {
         const user = await User.findOne({ username });
         if (user.password != password) throw user;
         const token = await generateToken(username, user.id);
-        res.cookie("token", `Bearer ${token}`);
+        res.cookie("token", `Bearer ${token}; Max-Age=2592000; Maxage:251651651; Path=/; Secure; HttpOnly;`);
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
     } catch (user) {
         res.cookie('token', "");
