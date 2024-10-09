@@ -7,9 +7,9 @@ export default defineConfig({
   server: {
         proxy: {
             '/apiv1': {
-                // target: 'http://localhost:8080', //or directly yu can write 'api':'http://locolhost:8080'
-                target:"https://fanshoebackend.onrender.com/",
+                target:"https://fanshoebackend.onrender.com",
                 changeOrigin: true,
+                // target: 'http://localhost:8080', //or directly yu can write 'api':'http://locolhost:8080'
                 // rewrite: (path) => path.replace(/^\/apiv1/, '')
             }
         }
