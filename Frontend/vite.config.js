@@ -13,7 +13,7 @@ export default defineConfig({
             //     changeOrigin: true,
             //     // target: 'http://localhost:8080', //or directly yu can write 'api':'http://locolhost:8080'
             //     // rewrite: (path) => path.replace(/^\/apiv1/, '')
-            // }
+            }
         }
     },
     plugins: [react()],
