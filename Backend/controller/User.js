@@ -45,7 +45,7 @@ const Login = async (req, res) => {
         res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
     } catch (user) {
-        res.cookie('token', "");
+        res.cookie('token');
         res.json({ msg: "Incorrect Username or Password", status: false });
     }
 }

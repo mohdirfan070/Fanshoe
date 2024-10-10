@@ -1,5 +1,8 @@
 {
-    "rewrites": [
-      { "source": "/apiv1/(.*)", "destination": "https://fanshoebackend.onrender.com/apiv1" }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/apiv1/(.*)",
+      "destination": "/apiv1"
+    }
+  ]
+}
