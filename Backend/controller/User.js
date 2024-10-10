@@ -61,7 +61,8 @@ const SignUp = async (req, res) => {
         const resp3 = await User.create({ name, address, age, username, password, gender, mobileNumber, cartId: resp2.id ,  pinCode:pincode });
         await Cart.findOneAndUpdate({ user: resp3.id });
         const token = await generateToken(username, resp3.id);
-        res.cookie("token", `Bearer ${token}`);
+        res.cookie("token", `Bearer ${token}` , {expires:new Date(Date,now()+172800000) ,  httpOnly: true,
+            secure: true});
         res.json({ msg: "SignUp Successfull", status: true, data: { name, address, age, username, password, gender, mobileNumber, cartId }, newUser: resp3.username });
 
     }
