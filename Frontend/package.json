@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy":"",
+
+
   "scripts": {
     "build": "vite build",
     "dev": "cls && vite --host",

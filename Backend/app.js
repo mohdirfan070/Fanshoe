@@ -8,7 +8,7 @@ const app = express();
 
 // Cross Origin Setup
 const cors = require('cors');
-app.use(cors());
+// app.use(cors());
 
 
 
