@@ -32,7 +32,7 @@ export default function UserProfile(prop) {
 
   const Submit = async (data) => {
       try { 
-        const res =await axios.patch('https://fanshoebackend.onrender.com/apiv1/updateuser' , inpData);
+        const res =await axios.patch('/apiv1/updateuser' , inpData);
         if(!res.data.status) throw res;
           // console.log(res.data);
           updateLogin(Math.random());

@@ -11,7 +11,7 @@ const notify = (msg, type, theme, autoClose) => {
 
 // const addItemToCart = async(data)=>{
 //   // console.log(data);
-//   const res = await axios.post("https://fanshoebackend.onrender.com/apiv1/additemtocart",data);
+//   const res = await axios.post("/apiv1/additemtocart",data);
 //   console.log(res.data);
 //   if(res.data.status){
 
@@ -23,7 +23,7 @@ export default function Product(prop) {
   const navigate = useNavigate();
   const [showMore , setShowMore] = useState(false);
   const addItemToCart = async (data) => {
-    const res = await axios.post("https://fanshoebackend.onrender.com/apiv1/additemtocart", data);
+    const res = await axios.post("/apiv1/additemtocart", data);
     // console.log(res.data)
     if (res.data.status) {
       updateproducts(Math.random());
@@ -33,7 +33,7 @@ export default function Product(prop) {
   
 
   const addToFav = async (data) => {
-    const res = await axios.post("https://fanshoebackend.onrender.com/apiv1/additemtofav", data);
+    const res = await axios.post("/apiv1/additemtofav", data);
     if (res.data.status) {
       notify("Added To Favorite", "success", "light", 1000);
       updateproducts(Math.random());
@@ -41,7 +41,7 @@ export default function Product(prop) {
   };
 
   const removeitemtofav = async (data) => {
-    const res = await axios.post("https://fanshoebackend.onrender.com/apiv1/removeitemtofav", data);
+    const res = await axios.post("/apiv1/removeitemtofav", data);
     if (res.data.status) {
       notify("Removed From Favorite", "success", "light", 1000);
       updateproducts(Math.random());

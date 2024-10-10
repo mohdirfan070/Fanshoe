@@ -56,9 +56,9 @@ const handleChange = (e)=>{
     // const imagesForm = new FormData();
     // imagesForm.append("image", imageData);
     try {
-      const res2 = await axios.post("https://fanshoebackend.onrender.com/apiv1/addproductinfo", { data });
+      const res2 = await axios.post("/apiv1/addproductinfo", { data });
       // console.log(res2.data);
-      // const res1 = await axios.post("https://fanshoebackend.onrender.com/apiv1/addproductimages", imagesForm, {
+      // const res1 = await axios.post("/apiv1/addproductimages", imagesForm, {
       //   headers: { "Content-Type": "multipart/form-data" },
       // });
       // console.log(res1.data);
