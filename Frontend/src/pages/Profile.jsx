@@ -25,7 +25,7 @@ export default function Profile() {
     try {
       document.getElementById("modal").classList.add("hidden");
       document.getElementById("profileDiv").style.opacity = 1;
-      document.cookie = `token=; expires=${Date.now()}; path=/;`;
+      document.cookie = `token=;`;
       updateLogin(Math.random());
       navigate("/");
     } catch (error) {

@@ -11,7 +11,7 @@ const generateToken = async (username, id) => {
 const getUSer = async (req, res) => {
     try {
         const cookie = req.cookies.token;
-        const token = cookie.split(' ')[1];
+        const token =cookie.split(";")[0].split(' ')[1];
         const isAuth = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({username:isAuth.username});
         res.json({msg:"working",status:true,data:{username:user.username,mobileNumber:user.mobileNumber,name:user.name,gender:user.gender,age:user.age,address:user.address,favorite:user.favorite,items:user.items,total:user.total,pincode:user.pinCode}});
@@ -42,8 +42,7 @@ const Login = async (req, res) => {
         const user = await User.findOne({ username });
         if (user.password != password) throw user;
         const token = await generateToken(username, user.id);
-        res.cookie("token", `Bearer ${token}` , {expires:new Date(Date,now()+172800000) ,  httpOnly: true,
-            secure: true});
+        res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
     } catch (user) {
         res.cookie('token', "");
@@ -61,8 +60,7 @@ const SignUp = async (req, res) => {
         const resp3 = await User.create({ name, address, age, username, password, gender, mobileNumber, cartId: resp2.id ,  pinCode:pincode });
         await Cart.findOneAndUpdate({ user: resp3.id });
         const token = await generateToken(username, resp3.id);
-        res.cookie("token", `Bearer ${token}` , {expires:new Date(Date,now()+172800000) ,  httpOnly: true,
-            secure: true});
+        res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
         res.json({ msg: "SignUp Successfull", status: true, data: { name, address, age, username, password, gender, mobileNumber, cartId }, newUser: resp3.username });
 
     }
@@ -72,6 +70,9 @@ const SignUp = async (req, res) => {
         res.json({ msg: "Email Already Exists!", status: false });
     }
 }
+
+
+module.exports = { Login, SignUp, getUSer , updateUser };
 
 
 module.exports = { Login, SignUp, getUSer , updateUser };

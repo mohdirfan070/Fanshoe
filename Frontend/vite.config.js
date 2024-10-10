@@ -6,7 +6,8 @@ export default defineConfig({
  
   server: {
         proxy: {
-            "/apiv1":"https://fanshoebackend.onrender.com/apiv1"
+          // '/apiv1':"http://localhost:8080"
+            "/apiv1":"https://fanshoebackend.onrender.com"
             // '/apiv1': {
             //     target:"https://fanshoebackend.onrender.com",
             //     changeOrigin: true,

@@ -15,12 +15,15 @@ const userData = createContext();
 // const cartData = createContext();
 const fetchUser = async () => {
   try {
-    const value = `${document.cookie.split("=")[1].split("%20")[1]}`;
+    // const value = `${document.cookie.split("=")[1].split("%20")[1]}`+".";
+    const value = document.cookie; 
+    // console.log(value.split("%3B")[0].split("%20")[1])
     if (value) {
       const res = await axios.get("/apiv1/getuser");
       return res.data.data;
     }
   } catch (error) {
+    console.log(error)
     return null;
   }
 };

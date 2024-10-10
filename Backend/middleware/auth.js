@@ -5,7 +5,14 @@ const authUser = async(req,res,next)=>{
      
     try{
         const cookie = req.cookies.token;
-           const token = cookie.split(' ')[1] ;
+        // console.log(cookie.split(';')[0].split(" ")[1])
+        // const token = cookie.split(';')[0].split(" ")[1];
+        //    const token = cookie.split(' ')[1] ;
+
+
+        // console.log(cookie.split(";")[0].split(' ')[1])
+        const token  = cookie.split(";")[0].split(' ')[1];
+        // console.log(token)
         const isAuth = jwt.verify(token,process.env.JWT_SECRET);
         // console.log(isAuth);
         await User.findOne({username:isAuth.username},{id:isAuth.id}).then((result)=>{
@@ -14,6 +21,7 @@ const authUser = async(req,res,next)=>{
             next();
     })}
     catch(result){
+        // console.log(result)
         res.json({msg:"Authentication Failed",status:false});
     };
    }
