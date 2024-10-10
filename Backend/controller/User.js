@@ -42,7 +42,8 @@ const Login = async (req, res) => {
         const user = await User.findOne({ username });
         if (user.password != password) throw user;
         const token = await generateToken(username, user.id);
-        res.cookie("token", `Bearer ${token}; Max-Age=2592000; Maxage:251651651; Path=/; Secure; HttpOnly;`);
+        res.cookie("token", `Bearer ${token}` , {expires:new Date(Date,now()+172800000) ,  httpOnly: true,
+            secure: true});
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
     } catch (user) {
         res.cookie('token', "");
