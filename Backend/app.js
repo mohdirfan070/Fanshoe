@@ -40,7 +40,10 @@ const Products = require('./routes/Products.js');
 const Payment  = require('./routes/Payment.js');
 const Order = require('./routes/Order.js');
 // All Middlewears
-app.use('*', cors()); //{origin:'Frontend Url', credentials: true}
+app.use('*', cors({
+    origin: ['http://localhost:5173'],
+    credentials: true
+  })); //{origin:'Frontend Url', credentials: true}
 
 
 

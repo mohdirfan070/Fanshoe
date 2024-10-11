@@ -43,7 +43,11 @@ export default function UserWishlist() {
               products.map((ele) => (ele ? <Product key={ele.createdAt} product={ele} /> : " "))}
           </>
         ) : (
-          "Nothing in Favortire "
+          <div className="w-full min-h-[50vh] flex justify-center items-center ">
+        
+          <span>Please Wait...</span>
+       
+      </div>
         )}
       </section>
     </>

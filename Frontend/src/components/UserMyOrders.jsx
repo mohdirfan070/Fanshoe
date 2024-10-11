@@ -53,7 +53,11 @@ export default function UserMyOrders() {
             }
           </div>)
        
-      ) : <span>No Orders Yet!</span> 
+      ) :  ( order && order.length==0)? ( <div className="w-full min-h-[50vh] flex justify-center items-center ">
+        
+          <span>Please Wait...</span>
+       
+      </div>) :  <span>No Orders Yet!</span> 
     }
   </section>
 </>

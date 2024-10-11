@@ -42,7 +42,12 @@ const Login = async (req, res) => {
         const user = await User.findOne({ username });
         if (user.password != password) throw user;
         const token = await generateToken(username, user.id);
-        res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
+        // res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
+        res.cookie("token",`Bearer ${token}` , { httpOnly: true,
+            secure: true,
+         
+            maxAge: 900000, // 15 minutes
+            path: '/' })
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
     } catch (user) {
         res.cookie('token');
@@ -60,7 +65,11 @@ const SignUp = async (req, res) => {
         const resp3 = await User.create({ name, address, age, username, password, gender, mobileNumber, cartId: resp2.id ,  pinCode:pincode });
         await Cart.findOneAndUpdate({ user: resp3.id });
         const token = await generateToken(username, resp3.id);
-        res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
+        res.cookie("token", `Bearer ${token}` , { httpOnly: true,
+            secure: true,
+         
+            maxAge: 900000, // 15 minutes
+            path: '/' })
         res.json({ msg: "SignUp Successfull", status: true, data: { name, address, age, username, password, gender, mobileNumber, cartId }, newUser: resp3.username });
 
     }

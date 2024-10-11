@@ -26,6 +26,7 @@ export default function Profile() {
       document.getElementById("modal").classList.add("hidden");
       document.getElementById("profileDiv").style.opacity = 1;
       document.cookie = `token=;`;
+      localStorage.setItem("isLogin",false);
       updateLogin(Math.random());
       navigate("/");
     } catch (error) {

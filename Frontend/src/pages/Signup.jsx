@@ -46,7 +46,7 @@ export default function Signup() {
     setIsSubmit(true);
     let res = await handleSignup(data, updateLogin);
     res.data.status
-      ? (notify("Sign Up Successfull", "success", "light", 3000),
+      ? (notify("Sign Up Successfull", "success", "light", 3000),      localStorage.setItem("isLogin",true),
         setTimeout(() => navigate("/"), 3000))
       : (notify(res.data.msg, "error", "light", 3000), setIsSubmit(false));
     setIsSubmit(false);

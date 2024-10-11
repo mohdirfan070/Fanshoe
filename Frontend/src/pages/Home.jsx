@@ -64,7 +64,7 @@ export default function Home() {
 
   return (
     <>
-      { products.length != 0 ? (
+      { products.length != 0  ? (
         <div className="w-full h-full m-auto flex  justify-center items-start">
           <div className="left-div w-[20%] p-1  min-h-screen flex justify-start items-start flex-col sticky top-[15vh] ">
             {/* <button className="py-[1vh] px-[1vw]  font2 border-[0.3vh] border-slate-500 min-w-[1.8vh] text-[2.3vh] font-semibold  rounded-[0.3vh]">
@@ -119,12 +119,12 @@ export default function Home() {
         <div className="w-full min-h-[50vh] flex justify-center items-center ">
           <Link
             to={"/login"}
-            className=" bg-slate-100 font3 font-semibold px-3 rounded-fulltext-red-600 text-[20vh]"
+            className=" bg-slate-100 font3 font-semibold px-3 rounded-fulltext-red-600 text-[10vh]"
           >
-            Please Login
+            <span> Please Wait...</span>
           </Link>
         </div>
-      )}
+      )  }
     </>
   );
 }

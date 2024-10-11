@@ -10,7 +10,7 @@ import { userData } from "../App";
 
 const handleLogin = async (data, updateLogin) => {
   // console.log(data)
-  let res = await axios.post("/apiv1/login", data);
+  let res = await axios.post("/apiv1/login", data , { withCredentials: true });
   //, {withCredentials:true} The withCredentials property is set to true to send cookies with a request to the server. Without this setting, cookies aren't sent automatically, and the server won't receive the data needed for session management or cookie-based authentication.
 
   //Reference  https://www.dhiwise.com/post/managing-secure-cookies-via-axios-interceptors
@@ -45,6 +45,7 @@ export default function Login() {
       if (!res.data.status) throw res;
       notify(res.data.msg, "success", "light", 3000);
       navigate("/");
+      localStorage.setItem("isLogin",true);
       // setIsSubmit(false);
       // ? (notify(res.data.msg, "success", "light", 3000),
       // setTimeout(() => navigate("/"), 3000))
