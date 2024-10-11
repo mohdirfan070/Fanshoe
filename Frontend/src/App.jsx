@@ -29,7 +29,7 @@ const fetchUser = async () => {
   //   return null;
   // }
   const res = await axios.get("/apiv1/getuser",{withCredentials:true});
-  console.log(res)
+  // console.log(res)
     return res.data.data;
 };
 
