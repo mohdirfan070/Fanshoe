@@ -27,7 +27,7 @@ const fetchUser = async () => {
   //   console.log(error)
   //   return null;
   // }
-  const res = await axios.get("/apiv1/getuser");
+  const res = await axios.get("https://fanshoebackend.onrender.com/apiv1/getuser");
     return res.data.data;
 };
 
