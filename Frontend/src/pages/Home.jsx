@@ -5,15 +5,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import baseurl from '../url.js';
 const notify = (msg, type, theme, autoClose) => {
   return toast(msg, { type, theme, autoClose });
 };
 
 const fetchProducts = async (page) => {
   try {
-    const res = await axios.get(`https://fanshoebackend.onrender.com/apiv1/products/${page}`);
-    if (!res.data ) throw res;
+    const res = await axios.get(`/apiv1/products/${page}`,{withCredentials:true});
+    // console.log(res)
+    // if (!res.data ) throw res;
     // console.log(res.data)
     return res.data;
   } catch (res) {

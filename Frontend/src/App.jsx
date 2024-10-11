@@ -10,6 +10,7 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { createContext, useEffect, useRef, useState } from "react";
 import Favorite from "./pages/Favorite";
+import baseurl from "./url";
 
 const userData = createContext();
 // const cartData = createContext();
@@ -27,7 +28,8 @@ const fetchUser = async () => {
   //   console.log(error)
   //   return null;
   // }
-  const res = await axios.get("https://fanshoebackend.onrender.com/apiv1/getuser");
+  const res = await axios.get("/apiv1/getuser",{withCredentials:true});
+  console.log(res)
     return res.data.data;
 };
 
@@ -49,7 +51,7 @@ function App() {
       setUser({ ...data });
       data && data.name ? console.log(`Hello ${data.name}`) : "";
     });
-  }, [isLogin, products]);
+  }, [isLogin, products ]);
 
   return (
     <>

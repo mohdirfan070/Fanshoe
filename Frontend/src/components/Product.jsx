@@ -9,21 +9,14 @@ const notify = (msg, type, theme, autoClose) => {
   return toast(msg, { type, theme, autoClose });
 };
 
-// const addItemToCart = async(data)=>{
-//   // console.log(data);
-//   const res = await axios.post("/apiv1/additemtocart",data);
-//   console.log(res.data);
-//   if(res.data.status){
 
-//   }
-// }
 
 export default function Product(prop) {
   const { user, updateproducts } = useContext(userData);
   const navigate = useNavigate();
   const [showMore , setShowMore] = useState(false);
   const addItemToCart = async (data) => {
-    const res = await axios.post("/apiv1/additemtocart", data);
+    const res = await axios.post("/apiv1/additemtocart", data , { withCredentials: true });
     // console.log(res.data)
     if (res.data.status) {
       updateproducts(Math.random());
@@ -33,7 +26,7 @@ export default function Product(prop) {
   
 
   const addToFav = async (data) => {
-    const res = await axios.post("/apiv1/additemtofav", data);
+    const res = await axios.post("/apiv1/additemtofav", data , { withCredentials: true });
     if (res.data.status) {
       notify("Added To Favorite", "success", "light", 1000);
       updateproducts(Math.random());
@@ -41,7 +34,7 @@ export default function Product(prop) {
   };
 
   const removeitemtofav = async (data) => {
-    const res = await axios.post("/apiv1/removeitemtofav", data);
+    const res = await axios.post("/apiv1/removeitemtofav", data , { withCredentials: true });
     if (res.data.status) {
       notify("Removed From Favorite", "success", "light", 1000);
       updateproducts(Math.random());

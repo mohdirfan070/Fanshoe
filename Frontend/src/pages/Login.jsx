@@ -7,16 +7,17 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { userData } from "../App";
-
+// import baseurl from '../url.js' 
 const handleLogin = async (data, updateLogin) => {
-  // console.log(data)
-  let res = await axios.post("https://fanshoebackend.onrender.com/apiv1/login", data , { withCredentials: true });
+  console.log(data)
+  let res = await axios.post("/apiv1/login", data , { withCredentials: true });
+  // console.log(res)
+  // console.log("Login")
   //, {withCredentials:true} The withCredentials property is set to true to send cookies with a request to the server. Without this setting, cookies aren't sent automatically, and the server won't receive the data needed for session management or cookie-based authentication.
-
+  // console.log(res)
   //Reference  https://www.dhiwise.com/post/managing-secure-cookies-via-axios-interceptors
   updateLogin(Math.random());
-
-  return res;
+    return res;
 };
 
 export default function Login() {

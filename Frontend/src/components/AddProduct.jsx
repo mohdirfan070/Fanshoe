@@ -56,12 +56,8 @@ const handleChange = (e)=>{
     // const imagesForm = new FormData();
     // imagesForm.append("image", imageData);
     try {
-      const res2 = await axios.post("/apiv1/addproductinfo", { data });
-      // console.log(res2.data);
-      // const res1 = await axios.post("/apiv1/addproductimages", imagesForm, {
-      //   headers: { "Content-Type": "multipart/form-data" },
-      // });
-      // console.log(res1.data);
+      const res2 = await axios.post("/apiv1/addproductinfo", { data } , { withCredentials: true });
+     
       if (res2.data.status) {
         notify(res2.data.msg, "success", "light", 2000);
       } else {

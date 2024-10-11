@@ -32,7 +32,7 @@ export default function UserProfile(prop) {
 
   const Submit = async (data) => {
       try { 
-        const res =await axios.patch('/apiv1/updateuser' , inpData);
+        const res =await axios.patch('/apiv1/updateuser' , inpData , { withCredentials: true });
         if(!res.data.status) throw res;
           // console.log(res.data);
           updateLogin(Math.random());

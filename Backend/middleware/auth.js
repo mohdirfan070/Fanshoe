@@ -5,16 +5,8 @@ const authUser = async(req,res,next)=>{
      
     try{
         const cookie = req.cookies.token;
-        // console.log(cookie.split(';')[0].split(" ")[1])
-        // const token = cookie.split(';')[0].split(" ")[1];
-        //    const token = cookie.split(' ')[1] ;
-
-
-        // console.log(cookie.split(";")[0].split(' ')[1])
         const token  = cookie.split(";")[0].split(' ')[1];
-        // console.log(token)
         const isAuth = jwt.verify(token,process.env.JWT_SECRET);
-        // console.log(isAuth);
         await User.findOne({username:isAuth.username},{id:isAuth.id}).then((result)=>{
             if(!result) throw result;
             req.dataFromAuth = { userData : isAuth };
