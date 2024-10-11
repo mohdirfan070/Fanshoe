@@ -41,7 +41,7 @@ const Payment  = require('./routes/Payment.js');
 const Order = require('./routes/Order.js');
 // All Middlewears
 app.use('*', cors({
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173' , "https://fanshoe.vercel.app"],
     credentials: true
   })); //{origin:'Frontend Url', credentials: true}
 
