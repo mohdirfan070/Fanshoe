@@ -10,13 +10,13 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { createContext, useEffect, useRef, useState } from "react";
 import Favorite from "./pages/Favorite";
-import baseurl from "./url";
+
 
 const userData = createContext();
 // const cartData = createContext();
 const fetchUser = async () => {
 
-  const res = await axios.get(baseurl+"/apiv1/getuser",{withCredentials:true});
+  const res = await axios.get("/apiv1/getuser",{withCredentials:true});
   // console.log(res)
     return res.data.data;
 };

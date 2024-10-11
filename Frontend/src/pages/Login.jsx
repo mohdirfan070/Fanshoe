@@ -7,9 +7,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { userData } from "../App";
-// import baseurl from '../url.js' 
+
 const handleLogin = async (data, updateLogin) => {
-  console.log(data)
   let res = await axios.post("/apiv1/login", data , { withCredentials: true });
   // console.log(res)
   // console.log("Login")
