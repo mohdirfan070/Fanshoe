@@ -48,6 +48,7 @@ const Login = async (req, res) => {
             httpOnly: true,
             secure: true,
             maxAge: 1500000, // 15 minutes
+            sameSite:"strict",
             path: '/' })
           
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
@@ -70,6 +71,7 @@ const SignUp = async (req, res) => {
         res.cookie('token', `Bearer ${token}`, {
             httpOnly: true,
             secure: true,
+            sameSite:"strict",
             maxAge: 1500000, // 15 minutes
             path: '/' })
           
