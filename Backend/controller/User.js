@@ -84,7 +84,10 @@ const SignUp = async (req, res) => {
 }
 
 
-module.exports = { Login, SignUp, getUSer , updateUser };
+const Logout = async (req,res)=>{
+    res.clearCookie("token");
+    res.status(200).json({msg:"Logged Out"});
+}
 
+module.exports = { Login, SignUp, Logout , getUSer , updateUser };
 
-module.exports = { Login, SignUp, getUSer , updateUser };

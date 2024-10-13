@@ -1,12 +1,12 @@
 import { useEffect, useState , useContext } from "react";
 
 import axios from "axios";
-import {userData }  from '../App';
+import baseurl from "../url";
 
 
 const updateCartProduct = async (uid , quantity )=>{
   try {
-      const res  = await axios.patch(`/apiv1/updatecartitem/${uid}/${quantity}` , { withCredentials: true });
+      const res  = await axios.patch(baseurl+`/updatecartitem/${uid}/${quantity}` , { withCredentials: true });
       if(!res.data.status) throw res;
       func(Math.random());
   } catch (res) {
@@ -16,7 +16,7 @@ const updateCartProduct = async (uid , quantity )=>{
 
 const handleDelete = async (data)=>{
   try {
-    const res  = await axios.delete(`/apiv1/deletecartitem/${data.uid}` , { withCredentials: true });
+    const res  = await axios.delete(baseurl+`/deletecartitem/${data.uid}` , { withCredentials: true });
     if(!res.data.status){ throw Error("Something Went Wrong!")}
     
 } catch (error) {

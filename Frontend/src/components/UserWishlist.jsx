@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { userData } from "../App";
 import axios from "axios";
 import Product from "./Product";
-
+import baseurl from "../url";
 const fetchProducts = async (id) => {
   try {
-    const res = await axios.get(`/apiv1/productsfromfav/${id}` , { withCredentials: true });
+    const res = await axios.get( baseurl+`/productsfromfav/${id}` , { withCredentials: true });
     if (!res.data) throw new Error("No data found");
     return res.data;
   } catch (error) {

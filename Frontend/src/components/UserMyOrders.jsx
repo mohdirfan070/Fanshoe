@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { userData } from '../App';
+import baseurl from '../url';
 const fetchOrders = async(username)=>{
     try {
-      const res = await axios.get(`/apiv1/getorders/${username}` , { withCredentials: true });
+      const res = await axios.get( baseurl+`/getorders/${username}` , { withCredentials: true });
       if(!res.data.status) throw Error("Something went wrong");
 
       return  res.data.data;
@@ -13,7 +14,7 @@ const fetchOrders = async(username)=>{
 }
 const handleCancel = async (orderId , status) =>{
   try {
-    const res = await axios.patch(`/apiv1/updateorder/${orderId}/${status}` , { withCredentials: true });
+    const res = await axios.patch(baseurl+`/updateorder/${orderId}/${status}` , { withCredentials: true });
     if(!res.data.status) throw Error("Something went wrong");
     return  res.data.data;
   } catch (error) {

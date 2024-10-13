@@ -8,10 +8,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { userData } from "../App";
-
+import baseurl from "../url";
 const handleSignup = async (data, updateLogin) => {
   // console.log(data)
-  let res = await axios.post("/apiv1/signup", data , { withCredentials: true });
+  let res = await axios.post( baseurl+"/signup", data , { withCredentials: true });
   //, {withCredentials:true} The withCredentials property is set to true to send cookies with a request to the server. Without this setting, cookies aren't sent automatically, and the server won't receive the data needed for session management or cookie-based authentication.
 
   //Reference  https://www.dhiwise.com/post/managing-secure-cookies-via-axios-interceptors

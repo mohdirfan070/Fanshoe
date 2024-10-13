@@ -12,7 +12,7 @@ const notify = (msg, type, theme, autoClose) => {
 
 const fetchProducts = async (page) => {
   try {
-    const res = await axios.get(`/apiv1/products/${page}`,{withCredentials:true});
+    const res = await axios.get( baseurl+`/products/${page}`,{withCredentials:true});
     // console.log(res)
     // if (!res.data ) throw res;
     // console.log(res.data)

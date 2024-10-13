@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { userData } from "../App";
+import baseurl from "../url";
 const notify = (msg, type, theme, autoClose) => {
   toast(msg, { type, theme, autoClose });
 };
@@ -32,7 +33,7 @@ export default function UserProfile(prop) {
 
   const Submit = async (data) => {
       try { 
-        const res =await axios.patch('/apiv1/updateuser' , inpData , { withCredentials: true });
+        const res =await axios.patch( baseurl+'/updateuser' , inpData , { withCredentials: true });
         if(!res.data.status) throw res;
           // console.log(res.data);
           updateLogin(Math.random());

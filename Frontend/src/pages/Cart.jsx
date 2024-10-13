@@ -4,9 +4,10 @@ import { userData } from "../App";
 import CartItem from "../components/CartItem";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import baseurl from "../url";
 const fetchProducts = async () => {
   try {
-    const res = await axios.get(`/apiv1/productsfromcart` , { withCredentials: true });
+    const res = await axios.get( baseurl+`/productsfromcart` , { withCredentials: true });
     console.log(res)
     if (!res.data) throw new Error("No data found");
     return res.data;
@@ -22,7 +23,7 @@ const notify = (msg, type, theme, autoClose) => {
 
 const handlePayment = async (amount ,  products , user  , updatorFunc)=>{
   try {
-    const res = await axios.post(`/apiv1/order/`,{ amount:amount*100 , notes:products , receipt: `${Math.floor(Math.random()*999999)+999999}`}  , { withCredentials: true } )
+    const res = await axios.post( baseurl+`/order/`,{ amount:amount*100 , notes:products , receipt: `${Math.floor(Math.random()*999999)+999999}`}  , { withCredentials: true } )
     if (!res.data) throw new Error("No data found");
     //  console.log(res.data);
      var option = {
@@ -36,7 +37,7 @@ const handlePayment = async (amount ,  products , user  , updatorFunc)=>{
       handler:async function(response) {
         //  alert("Transaction is Successfull");
         const body = {...response};
-        const isValidPayment = await axios.post('/apiv1/validate', {...body , amount , products , user} , { withCredentials: true });
+        const isValidPayment = await axios.post( baseurl+'/validate', {...body , amount , products , user} , { withCredentials: true });
         // console.log(isValidPayment);
         if(!isValidPayment.data.status) notify(isValidPayment.data.msg,"error","light",2000);
         updatorFunc(Math.random());

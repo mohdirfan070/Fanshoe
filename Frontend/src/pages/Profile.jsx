@@ -12,7 +12,8 @@ import Admin from "../components/Admin";
 import AddProduct from "../components/AddProduct";
 import menuIcon from "../assets/menuIcon.svg";
 import closeIcon from "../assets/closeIcon.svg";
-import ChangeProduct from "../components/ChangeProduct";
+import axios from 'axios';
+import baseurl from "../url";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -21,16 +22,16 @@ export default function Profile() {
   const [menu, setMenu] = useState("personalinfo");
   const [adminSubMenu, setAdminSubMenu] = useState("");
   const { user, updateLogin } = useContext(userData);
-  const logout = () => {
+  const logout = async() => {
     try {
       document.getElementById("modal").classList.add("hidden");
       document.getElementById("profileDiv").style.opacity = 1;
-      document.cookie = `token=;`;
-      localStorage.setItem("isLogin",false);
+      const res =  await axios.get(baseurl+`/logout`);
+      if(!res) throw Error("Something Went Wrong");
       updateLogin(Math.random());
       navigate("/");
     } catch (error) {
-      navigate("/");
+      navigate("/profile");
     }
   };
   const handleLogout = () => {
