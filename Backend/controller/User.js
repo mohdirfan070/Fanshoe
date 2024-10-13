@@ -72,7 +72,7 @@ const SignUp = async (req, res) => {
             httpOnly: true,
             secure: true,
             sameSite:"strict",
-            maxAge: new Date( Date.now() +  1500000),
+            maxAge: new Date( Date.now() +  1500000).getTime(),
             path: '/' })
           
         res.json({ msg: "SignUp Successfull", status: true, data: { name, address, age, username, password, gender, mobileNumber, cartId }, newUser: resp3.username });
