@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const fetchProducts = async () => {
   try {
     const res = await axios.get(`/apiv1/productsfromcart` , { withCredentials: true });
+    console.log(res)
     if (!res.data) throw new Error("No data found");
     return res.data;
   } catch (error) {
@@ -35,7 +36,7 @@ const handlePayment = async (amount ,  products , user  , updatorFunc)=>{
       handler:async function(response) {
         //  alert("Transaction is Successfull");
         const body = {...response};
-        const isValidPayment = await axios.post('/apiv1/validate',{...body , amount , products , user} , { withCredentials: true });
+        const isValidPayment = await axios.post('/apiv1/validate', {...body , amount , products , user} , { withCredentials: true });
         // console.log(isValidPayment);
         if(!isValidPayment.data.status) notify(isValidPayment.data.msg,"error","light",2000);
         updatorFunc(Math.random());

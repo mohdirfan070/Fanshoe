@@ -16,7 +16,7 @@ const userData = createContext();
 // const cartData = createContext();
 const fetchUser = async () => {
 
-  const res = await axios.get("/apiv1/getuser",{withCredentials:true});
+  const res = await axios.get( "/apiv1/getuser" , { withCredentials:true } );
   // console.log(res)
     return res.data.data;
 };

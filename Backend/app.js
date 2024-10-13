@@ -43,7 +43,7 @@ const Order = require('./routes/Order.js');
 app.use('*', cors({
     credentials:true,
     origin: ['http://localhost:5173' , "https://fanshoe.vercel.app"],
-    credentials: true
+   
   })); //{origin:'Frontend Url', credentials: true}
 
 

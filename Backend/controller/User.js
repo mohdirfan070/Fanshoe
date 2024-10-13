@@ -44,17 +44,15 @@ const Login = async (req, res) => {
         const token = await generateToken(username, user.id);
         // res.cookie("token", `Bearer ${token}; expires:${new Date(Date.now() +5000000)}; path:/;`);
         // console.log(token)
-        res.cookie("token",`Bearer ${token}` , { 
+        res.cookie('token', `Bearer ${token}`, {
             httpOnly: true,
-            secure: "strict",
-            
+            secure: true,
             maxAge: 1500000, // 15 minutes
-            path: '/'
-         }
-        )
+            path: '/' })
+          
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
     } catch (user) {
-        res.cookie('token');
+        res.clearCookie('token');
         res.json({ msg: "Incorrect Username or Password", status: false });
     }
 }
@@ -69,12 +67,12 @@ const SignUp = async (req, res) => {
         const resp3 = await User.create({ name, address, age, username, password, gender, mobileNumber, cartId: resp2.id ,  pinCode:pincode });
         await Cart.findOneAndUpdate({ user: resp3.id });
         const token = await generateToken(username, resp3.id);
-        res.cookie("token", `Bearer ${token}`, { 
+        res.cookie('token', `Bearer ${token}`, {
             httpOnly: true,
-            secure: "strict",
+            secure: true,
             maxAge: 1500000, // 15 minutes
-            path: '/'
-         })
+            path: '/' })
+          
         res.json({ msg: "SignUp Successfull", status: true, data: { name, address, age, username, password, gender, mobileNumber, cartId }, newUser: resp3.username });
 
     }
