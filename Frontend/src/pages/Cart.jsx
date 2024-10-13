@@ -8,7 +8,7 @@ import baseurl from "../url";
 const fetchProducts = async () => {
   try {
     const res = await axios.get( baseurl+`/productsfromcart` , { withCredentials: true });
-    console.log(res)
+    // console.log(res)
     if (!res.data) throw new Error("No data found");
     return res.data;
   } catch (error) {
