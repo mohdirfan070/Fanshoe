@@ -2,11 +2,12 @@ import { useEffect, useState , useContext } from "react";
 
 import axios from "axios";
 import baseurl from "../url";
+axios.defaults.withCredentials = true;
 
-
-const updateCartProduct = async (uid , quantity )=>{
+const updateCartProduct = async (uid , quantity , func )=>{
   try {
       const res  = await axios.patch(baseurl+`/updatecartitem/${uid}/${quantity}` , { withCredentials: true });
+      // console.log(res)
       if(!res.data.status) throw res;
       func(Math.random());
   } catch (res) {
@@ -14,10 +15,11 @@ const updateCartProduct = async (uid , quantity )=>{
   }
 }
 
-const handleDelete = async (data)=>{
+const handleDelete = async (data , func)=>{
   try {
-    const res  = await axios.delete(baseurl+`/deletecartitem/${data.uid}` , { withCredentials: true });
+    const res  = await axios.delete(`${baseurl}/deletecartitem/${data.uid}`);
     if(!res.data.status){ throw Error("Something Went Wrong!")}
+    func(Math.random());
     
 } catch (error) {
   // console.log(error);
@@ -37,8 +39,8 @@ export default function CartItem(prop) {
   useEffect(()=>{
     if(product.quantity!=prop.data.quantity){
       const sentId =  setTimeout(() => {
-         updateCartProduct(prop.data.uid , product.quantity);
-         prop.updateFetchAgain(Math.random());
+         updateCartProduct(prop.data.uid , product.quantity ,  prop.updateFetchAgain );
+       
       }, 1000);
       return ()=>clearInterval(sentId);
     }
@@ -79,8 +81,7 @@ export default function CartItem(prop) {
         </section>
         <section>
           <button 
-          onClick={()=>{handleDelete(prop.data) , prop.updateFetchAgain(Math.random())
-             ,setHide(!hide)
+          onClick={()=>{handleDelete(prop.data , prop.updateFetchAgain )  ,setHide(!hide)
           }} 
            >
             <img
