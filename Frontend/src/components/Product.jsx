@@ -51,7 +51,7 @@ export default function Product(prop) {
 
     price:prop.product && prop.product.price ?  prop.product.price - prop.product.price * (prop.product.discount / 100)  : 0,
   });
-
+``
 
   return (
     <>
@@ -168,7 +168,7 @@ export default function Product(prop) {
                     : () => navigate("/login")
                 }
                 className="h-[4vh] w-[4vw] object-contain"
-                src="https://th.bing.com/th/id/OIP.qJr_Kh_24UKMem4t-U9AwgDnEs?rs=1&pid=ImgDetMain"
+                src="./src/assets/notFavoriteIcon.png"
                 alt="notFavIconImg"
               />
             )}

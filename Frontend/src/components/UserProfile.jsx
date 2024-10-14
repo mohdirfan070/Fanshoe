@@ -267,7 +267,7 @@ export default function UserProfile(prop) {
               Change Information{" "}
               <img
                 className="inline-block"
-                src="./src/assets/editIcon.svg"
+                src="./src/assets/editIcon.png"
                 alt="EditIcon"
               />{" "}
             </button>
