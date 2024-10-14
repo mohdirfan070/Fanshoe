@@ -8,7 +8,7 @@ const fetchAllProducts = async (req, res) => {
         // // .sort({stock:1}).limit(3)
         if(page<0){  res.json({ msg: "Working", status: true, end:true})}
         else{
-            const response = (await Product.find({ active: true }).skip(page*4).limit(4));
+            const response = (await Product.find({ active: true }).skip(page*6).limit(6));
             if(response.length!=0){
                 res.json({ msg: "Working", status: true, data: response , end : false});
             }else{
