@@ -48,7 +48,7 @@ const Login = async (req, res) => {
             httpOnly: true,
             secure: true,
             maxAge: new Date( Date.now() +  1500000), // 15 minutes
-            sameSite:"strict",
+            sameSite:"none",
             path: '/' })
           
         res.json({ msg: "Login Successfull", status: true, data: { name: user.name, username: user.username, gender: user.gender } });
@@ -71,7 +71,7 @@ const SignUp = async (req, res) => {
         res.cookie('token', `Bearer ${token}`, {
             httpOnly: true,
             secure: true,
-            sameSite:"strict",
+            sameSite:"none",
             maxAge: new Date( Date.now() +  1500000).getTime(),
             path: '/' })
           
