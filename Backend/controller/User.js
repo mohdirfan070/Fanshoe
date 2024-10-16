@@ -87,7 +87,7 @@ const SignUp = async (req, res) => {
 
 
 const Logout = async (req,res)=>{
-    res.clearCookie("token");
+   res.clearCookie('token', { path: '/' });
     res.status(200).json({msg:"Logged Out"});
 }
 
