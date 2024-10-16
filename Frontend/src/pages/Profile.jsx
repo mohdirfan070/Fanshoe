@@ -29,6 +29,7 @@ export default function Profile() {
       const res =  await axios.get(baseurl+`/logout`,{withCredentials:true});
       if(!res) throw Error("Something Went Wrong");
       updateLogin(Math.random());
+      document.cookie.token="";
       navigate("/");
     } catch (error) {
       navigate("/profile");
