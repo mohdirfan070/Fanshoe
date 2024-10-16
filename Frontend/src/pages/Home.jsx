@@ -73,7 +73,7 @@ export default function Home() {
               Filter{" "}
               <img
                 className="h-[3vh] inline-block"
-                src="./src/assets/filterIcon.svg"
+                src="./src/assets/filterIcon.png"
                 alt=""
               />{" "}
             </button> */}

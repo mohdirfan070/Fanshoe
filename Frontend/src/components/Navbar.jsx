@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import profileIcon from "../assets/profileIcon.svg";
-import searchIcon from "../assets/searchIcon.svg";
-import cartIcon from "../assets/cartIcon.svg";
-import favoriteIcon from "../assets/favoriteIcon.svg";
+import profileIcon from "../assets/profileIcon.png";
+import searchIcon from "../assets/searchIcon.png";
+import cartIcon from "../assets/cartIcon.png";
+import favoriteIcon from "../assets/favoriteIcon.png";
 
 import "./Navbar.css";
 import { userData } from "../App";
@@ -29,7 +29,7 @@ export default function Navbar() {
       >
         <Link to={isUser ? "/profile" : "/login"}>
           <img
-            className="min-h-[4vh] max-h-[4vh] min-w-[6vw] "
+            className="min-h-6 max-h-6 mx-2"
             src={profileIcon}
             alt="ProfileIcon"
           />
@@ -69,7 +69,7 @@ export default function Navbar() {
           htmlFor="searchInp"
         >
           <img
-            className="min-h-[4vh] max-h-[4vh] min-w-[6vw] "
+            className="min-h-6 max-h-6 mx-2"
             src={searchIcon}
             alt="SearchIcon"
           />
@@ -79,9 +79,9 @@ export default function Navbar() {
           id="favoriteIcon"
           to={isUser && isUser.name ? "/favorite" : "/login"}
         > 
-                <span className="absolute text-[2vh]  -top-[40%] left-[22%] text-white bg-red-500 max-w-max rounded-[2.2vh] px-[1.1vh]">{isUser &&  isUser.name && isUser.favorite.length ?  isUser.favorite.length : 0 }</span>
+                <span className="absolute text-[2vh]  -top-[40%] left-[2%] text-white bg-red-500 max-w-max rounded-[2.2vh] px-[1.1vh]">{isUser &&  isUser.name && isUser.favorite.length ?  isUser.favorite.length : 0 }</span>
           <img
-            className="min-h-[4vh] max-h-[4vh] min-w-[6vw] "
+            className="min-h-6 max-h-6 mx-2"
             src={favoriteIcon}
             alt="FavoriteIcon"
           />
@@ -98,7 +98,7 @@ export default function Navbar() {
           </span>
 
           <img
-            className="min-h-[4vh] max-h-[4vh] min-w-[6vw] "
+            className="min-h-6 max-h-6 mx-2"
             src={cartIcon}
             alt="CartIcon"
           />

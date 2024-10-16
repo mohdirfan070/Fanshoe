@@ -10,8 +10,8 @@ import UserContact from "../components/UserContact";
 import UserReturn from "../components/UserReturn";
 import Admin from "../components/Admin";
 import AddProduct from "../components/AddProduct";
-import menuIcon from "../assets/menuIcon.svg";
-import closeIcon from "../assets/closeIcon.svg";
+import menuIcon from "../assets/menuIcon.png";
+import closeIcon from "../assets/closeIcon.png";
 import axios from 'axios';
 import baseurl from "../url";
 
@@ -26,7 +26,7 @@ export default function Profile() {
     try {
       document.getElementById("modal").classList.add("hidden");
       document.getElementById("profileDiv").style.opacity = 1;
-      const res =  await axios.get(baseurl+`/logout`);
+      const res =  await axios.get(baseurl+`/logout`,{withCredentials:true});
       if(!res) throw Error("Something Went Wrong");
       updateLogin(Math.random());
       navigate("/");
@@ -183,13 +183,13 @@ export default function Profile() {
                   {menu == "admin" ? (
                     <img
                       className="inline-block scale-105 h-6"
-                      src="./src/assets/arrowDropUp.svg"
+                      src="./src/assets/arrowDropUp.png"
                       alt="DrowUp"
                     />
                   ) : (
                     <img
                       className="inline-block scale-105 h-6"
-                      src="./src/assets/arrowDropDown.svg"
+                      src="./src/assets/arrowDropDown.png"
                       alt="DropDwon"
                     />
                   )}

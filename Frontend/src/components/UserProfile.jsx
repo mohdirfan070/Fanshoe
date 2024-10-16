@@ -79,7 +79,7 @@ export default function UserProfile(prop) {
               htmlFor="image1"
             >Profile Image <img
             className="inline-block"
-            src="./src/assets/uploadIcon.svg"
+            src="./src/assets/uploadIcon.png"
             alt="uploadIcon"
           />          
             </label>{" "}
@@ -281,7 +281,7 @@ export default function UserProfile(prop) {
               htmlFor="image1"
             >Profile Image <img
             className="inline-block"
-            src="./src/assets/uploadIcon.svg"
+            src="./src/assets/uploadIcon.png"
             alt="uploadIcon"
           />          
             </label>{" "}

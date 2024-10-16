@@ -4,7 +4,7 @@ import { userData } from "../App";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import baseurl from "../url";
-
+import favIcon from '../assets/favIcon.svg'
 const notify = (msg, type, theme, autoClose) => {
   return toast(msg, { type, theme, autoClose });
 };
@@ -157,7 +157,7 @@ export default function Product(prop) {
                     : () => navigate("/login")
                 }
                 className="h-[4vh] w-[4vw] object-contain"
-                src="./src/assets/favoriteIcon.png"
+                src="./src/assets/favIcon.svg"
                 alt="favIconImg"
               />
             ) : (

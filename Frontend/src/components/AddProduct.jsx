@@ -95,7 +95,7 @@ const handleChange = (e)=>{
                Update Product Info{" "}
                 <img
                   className="inline-block backdrop-invert-0 font2 "
-                  src="./src/assets/editIcon.svg"
+                  src="./src/assets/editIcon.png"
                   alt="EditIcon"
                 />{" "}
               </button>
@@ -380,7 +380,7 @@ const handleChange = (e)=>{
                         Image 1
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src="./src/assets/uploadIcon.png"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -412,7 +412,7 @@ const handleChange = (e)=>{
                         Image 2
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src="./src/assets/uploadIcon.png"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -443,7 +443,7 @@ const handleChange = (e)=>{
                         Image 3
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src="./src/assets/uploadIcon.png"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -474,7 +474,7 @@ const handleChange = (e)=>{
                         Image 4
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src="./src/assets/uploadIcon.png"
                           alt="uploadIcon"
                         />{" "}
                       </>

@@ -86,7 +86,7 @@ export default function CartItem(prop) {
            >
             <img
              className="min-h-[2.5vh] max-h-[3vh]"
-              src="./src/assets/deleteIcon.svg"
+              src="./src/assets/deleteIcon.png"
               alt=""
             />
           </button>
