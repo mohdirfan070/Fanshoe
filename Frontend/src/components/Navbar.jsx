@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import profileIcon from "../assets/profileIcon.png";
 import searchIcon from "../assets/searchIcon.png";
 import cartIcon from "../assets/cartIcon.png";
-import favoriteIcon from "../assets/favoriteIcon.png";
+import favoriteIcon from "../assets/notFavoriteIcon.png";
 
 import "./Navbar.css";
 import { userData } from "../App";
@@ -81,7 +81,7 @@ export default function Navbar() {
         > 
                 <span className="absolute text-[2vh]  -top-[40%] left-[2%] text-white bg-red-500 max-w-max rounded-[2.2vh] px-[1.1vh]">{isUser &&  isUser.name && isUser.favorite.length ?  isUser.favorite.length : 0 }</span>
           <img
-            className="min-h-6 max-h-6 mx-2"
+            className="min-h-6 max-h-6 mx-2 bg-blend-multiply"
             src={favoriteIcon}
             alt="FavoriteIcon"
           />

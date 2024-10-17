@@ -47,7 +47,7 @@ const Login = async (req, res) => {
         res.cookie('token', `Bearer ${token}`, {
             httpOnly: true,
             secure: true,
-            maxAge: new Date( Date.now() +  1500000), // 15 minutes
+            maxAge: new Date( Date.now() +   172800000 ), // 15 minutes
             sameSite:"none",
             path: '/' })
           
@@ -72,7 +72,7 @@ const SignUp = async (req, res) => {
             httpOnly: true,
             secure: true,
             sameSite:"none",
-            maxAge: new Date( Date.now() +  1500000).getTime(),
+            maxAge: new Date( Date.now() +   172800000 ).getTime(),
             path: '/' })
           
         res.json({ msg: "SignUp Successfull", status: true, data: { name, address, age, username, password, gender, mobileNumber, cartId }, newUser: resp3.username });
@@ -87,7 +87,7 @@ const SignUp = async (req, res) => {
 
 
 const Logout = async (req,res)=>{
-    res.clearCookie('token', { path: '/' });
+    res.cookie('token'," " , { path: '/' ,  maxAge :  new Date(Date.now()), httpOnly : true });
 
     res.status(200).json({msg:"Logged Out"});
 }
