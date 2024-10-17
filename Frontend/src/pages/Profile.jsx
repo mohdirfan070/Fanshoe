@@ -26,7 +26,7 @@ export default function Profile() {
     try {
       document.getElementById("modal").classList.add("hidden");
       document.getElementById("profileDiv").style.opacity = 1;
-      const res =  await axios.get(baseurl+`/logout`,{withCredentials:true});
+      const res =  await axios.post(baseurl+`/logout`,{time : new Date(Date.now()).getTime()},{withCredentials:true});
       if(!res) throw Error("Something Went Wrong");
       updateLogin(Math.random());
       document.cookie.token="";
