@@ -54,8 +54,14 @@ export default function Signup() {
 
   return (
     <>
-      <div className=" bg-red-100 min-h-screen w-full flex justify-center items-start flex-nowrap min-w-[320px]">
-        <div
+      <div className=" bg-red-100 min-h-screen w-full flex justify-center flex-col items-center flex-nowrap min-w-[320px]">
+      <h2 className="text-[1.7rem] m-3 font-semibold text-center font3">
+            Welcome To{" "}
+            <span className="text-3xl font1 text-red-600">Fanshy</span> <br />{" "}
+            Let's Change the <em> LifeStyle</em>{" "}
+          </h2>
+
+        {/* <div
           id="left-signup"
           className=" min-h-screen w-full flex-col flex justify-start items-center p-4"
         >
@@ -64,17 +70,12 @@ export default function Signup() {
             src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.svg"
             alt=""
           />
-        </div>
+        </div> */}
         <div
           id="right-signup"
-          className="min-h-screen w-full flex-col flex justify-start items-center p-4"
+          className="min-h-screen w-full  flex justify-start items-center p-4"
         >
-          <h2 className="text-[1.7rem] m-3 font-semibold text-center font3">
-            Welcome To{" "}
-            <span className="text-3xl font1 text-red-600">Fanshy</span> <br />{" "}
-            Let's Change the <em> LifeStyle</em>{" "}
-          </h2>
-
+         
           <span className="text-blue-700 font-medium text-lg m-4 underline">
             {" "}
             <Link to={"/login"}>Already a User?</Link>{" "}
@@ -82,8 +83,11 @@ export default function Signup() {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-2 justify-center items-center min-w-[320px] max-w-[800px]"
+            className="flex  gap-2 justify-between items-center min-w-[320px] "
           >
+            <div className="flex flex-col" >
+
+            
             <label htmlFor="name" className="text-start">
               {errors.name ? (
                 <span className="text-red-600 ">Name is Required!</span>
@@ -137,6 +141,9 @@ export default function Signup() {
               className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
             />
 
+    
+
+
             <label htmlFor="age" className="text-start">
               {errors.age ? (
                 <span className="text-red-600 ">Inavlid Age</span>
@@ -184,6 +191,10 @@ export default function Signup() {
               })}
               className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
             />
+
+</div>
+<div className="flex flex-col" >
+
 
             <label htmlFor="pincode" className="text-start">
               {errors.pincode ? (
@@ -241,6 +252,7 @@ export default function Signup() {
                   Submit
                 </button>
               )}
+            </div>
             </div>
           </form>
         </div>

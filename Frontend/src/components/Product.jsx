@@ -158,7 +158,7 @@ export default function Product(prop) {
                     : () => navigate("/login")
                 }
                 className="h-[4vh] w-[4vw] object-contain"
-                src="./src/assets/favoriteIcon.svg"
+                src={favoriteIcon}
                 alt="favIconImg"
               />
             ) : (
@@ -169,7 +169,7 @@ export default function Product(prop) {
                     : () => navigate("/login")
                 }
                 className="h-[4vh] w-[4vw] object-contain"
-                src="./src/assets/notFavoriteIcon.svg"
+                src={notFavoriteIcon}
                 alt="notFavIconImg"
               />
             )}

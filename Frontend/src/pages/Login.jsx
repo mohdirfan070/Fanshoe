@@ -55,7 +55,7 @@ export default function Login() {
   return (
     <>
       <div className="bg-white min-h-screen w-full flex justify-center items-start flex-nowrap min-w-[320px]">
-        <div
+        {/* <div
           id="left-signup"
           className=" min-h-screen w-full flex-col flex justify-start items-center bg-red-100 p-4"
         >
@@ -64,7 +64,7 @@ export default function Login() {
             src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.svg"
             alt=""
           />
-        </div>
+        </div> */}
         <div
           id="right-signup"
           className="min-h-screen w-full flex-col flex justify-start items-center bg-red-100 p-4"
