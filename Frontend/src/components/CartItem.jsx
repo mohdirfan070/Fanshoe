@@ -2,6 +2,7 @@ import { useEffect, useState , useContext } from "react";
 
 import axios from "axios";
 import baseurl from "../url";
+import deleteIcon from "../assets/deleteIcon.svg"
 axios.defaults.withCredentials = true;
 
 const updateCartProduct = async (uid , quantity , func )=>{
@@ -86,7 +87,7 @@ export default function CartItem(prop) {
            >
             <img
              className="min-h-[2.5vh] max-h-[3vh]"
-              src="./src/assets/deleteIcon.svg"
+              src={deleteIcon}
               alt=""
             />
           </button>
