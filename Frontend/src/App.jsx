@@ -1,6 +1,7 @@
 import "./App.css";
+import { Suspense , lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+const Home = lazy(()=> import("./pages/Home"));
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
@@ -40,7 +41,7 @@ function App() {
       data && data.name ? console.log(`Hello ${data.name}`) : "";
     });
   }, [isLogin, products ]);
-
+  
   return (
     <>
       <BrowserRouter>
@@ -48,8 +49,10 @@ function App() {
           <Navbar />
           <ToastContainer stacked />
           <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/home"} element={<Home />} />
+           
+            <Route path={"/"} element={ <Suspense fallback={ <div>Loading...</div> }  > <Home />   </Suspense>} />
+            <Route path={"/home"} element={ <Suspense fallback={ <div>Loading...</div> }  >  <Home />   </Suspense>} />
+          
             <Route path={"/favorite"} element={<Favorite />} />
             <Route path={"/login"} element={<Login />} />
             <Route path={"/signup"} element={<Signup />} />

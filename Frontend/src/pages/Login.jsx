@@ -61,7 +61,7 @@ export default function Login() {
         >
           <img
             className="min-h-96  "
-            src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png"
+            src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.svg"
             alt=""
           />
         </div>
@@ -96,6 +96,7 @@ export default function Login() {
             <input
               label="Email"
               type="text"
+           
               placeholder="xyz123@gmail.com"
               {...register("username", {
                 required: "Email Required",
@@ -103,18 +104,7 @@ export default function Login() {
               })}
               className={`emailInp py-3 outline-none hover:outline-slate-300  rounded px-3 bg-slate-100 w-[90%] ${ errors.username?"outline-2 outline-red-600":"focus:outline-blue-400 "}`}
             />
-            {/* {
-            errors.username && (
-              <span className="text-red-600">Invalid Email</span>
-            )
-            } */}
-            {/* {errors.password &&
-              notify(
-                "Invalid Password Minimum 6 Characters",
-                "error",
-                "light",
-                3500
-              )} */}
+         
 
             <label htmlFor="password" className="text-start">
               {errors.password ? (

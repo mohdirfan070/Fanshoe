@@ -95,7 +95,7 @@ const handleChange = (e)=>{
                Update Product Info{" "}
                 <img
                   className="inline-block backdrop-invert-0 font2 "
-                  src="./src/assets/editIcon.png"
+                  src="./src/assets/editIcon.svg"
                   alt="EditIcon"
                 />{" "}
               </button>
@@ -380,7 +380,7 @@ const handleChange = (e)=>{
                         Image 1
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.png"
+                          src="./src/assets/uploadIcon.svg"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -393,7 +393,7 @@ const handleChange = (e)=>{
                     className="p-4 hidden rounded-lg text-lg font2 font-semibold  "
                     type="file"
                     multiple
-                    accept="image/png,image/jpeg"
+                    accept="image/svg,image/jpeg"
                     name="image1"
                     id="image1"
                     placeholder="Image 1"
@@ -412,7 +412,7 @@ const handleChange = (e)=>{
                         Image 2
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.png"
+                          src="./src/assets/uploadIcon.svg"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -424,7 +424,7 @@ const handleChange = (e)=>{
                     onChange={handleFileChange}
                     className="p-4 hidden  rounded-lg text-lg font2 font-semibold    "
                     type="file"
-                    accept="image/png,image/jpeg"
+                    accept="image/svg,image/jpeg"
                     name="image2"
                     id="image2"
                     placeholder="Image 2"
@@ -443,7 +443,7 @@ const handleChange = (e)=>{
                         Image 3
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.png"
+                          src="./src/assets/uploadIcon.svg"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -455,7 +455,7 @@ const handleChange = (e)=>{
                     {...register("image3")}
                     className="p-4 hidden rounded-lg text-lg font2 font-semibold    "
                     type="file"
-                    accept="image/png,image/jpeg"
+                    accept="image/svg,image/jpeg"
                     name="image3"
                     id="image3"
                     placeholder="Image 3"
@@ -474,7 +474,7 @@ const handleChange = (e)=>{
                         Image 4
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.png"
+                          src="./src/assets/uploadIcon.svg"
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -486,7 +486,7 @@ const handleChange = (e)=>{
                     {...register("image4")}
                     className="p-4 hidden rounded-lg text-lg font2 font-semibold    "
                     type="file"
-                    accept="image/png,image/jpeg"
+                    accept="image/svg,image/jpeg"
                     name="image4"
                     id="image4"
                     placeholder="Image 4"

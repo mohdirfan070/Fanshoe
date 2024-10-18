@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import profileIcon from "../assets/profileIcon.png";
-import searchIcon from "../assets/searchIcon.png";
-import cartIcon from "../assets/cartIcon.png";
-import favoriteIcon from "../assets/notFavoriteIcon.png";
+import profileIcon from "../assets/profileIcon.svg";
+import searchIcon from "../assets/searchIcon.svg";
+import cartIcon from "../assets/cartIcon.svg";
+import favoriteIcon from "../assets/notFavoriteIcon.svg";
 
 import "./Navbar.css";
 import { userData } from "../App";

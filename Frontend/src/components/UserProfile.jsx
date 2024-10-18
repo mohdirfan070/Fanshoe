@@ -79,7 +79,7 @@ export default function UserProfile(prop) {
               htmlFor="image1"
             >Profile Image <img
             className="inline-block"
-            src="./src/assets/uploadIcon.png"
+            src="./src/assets/uploadIcon.svg"
             alt="uploadIcon"
           />          
             </label>{" "}
@@ -87,7 +87,7 @@ export default function UserProfile(prop) {
             <input
               className="p-4 hidden rounded-lg text-lg font2 font-semibold  "
               type="file"
-              accept="image/png,image/jpeg"
+              accept="image/svg,image/jpeg"
               name="image1"
               id="image1"
               placeholder="Image 1"
@@ -267,7 +267,7 @@ export default function UserProfile(prop) {
               Change Information{" "}
               <img
                 className="inline-block"
-                src="./src/assets/editIcon.png"
+                src="./src/assets/editIcon.svg"
                 alt="EditIcon"
               />{" "}
             </button>
@@ -281,7 +281,7 @@ export default function UserProfile(prop) {
               htmlFor="image1"
             >Profile Image <img
             className="inline-block"
-            src="./src/assets/uploadIcon.png"
+            src="./src/assets/uploadIcon.svg"
             alt="uploadIcon"
           />          
             </label>{" "}
@@ -289,7 +289,7 @@ export default function UserProfile(prop) {
             <input
               className="p-4 hidden rounded-lg text-lg font2 font-semibold  "
               type="file"
-              accept="image/png,image/jpeg"
+              accept="image/svg,image/jpeg"
               name="image1"
               id="image1"
               placeholder="Image 1"

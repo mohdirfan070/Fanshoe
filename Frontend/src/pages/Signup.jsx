@@ -61,7 +61,7 @@ export default function Signup() {
         >
           <img
             className="min-h-96  "
-            src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png"
+            src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.svg"
             alt=""
           />
         </div>

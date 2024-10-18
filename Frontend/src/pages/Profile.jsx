@@ -10,8 +10,8 @@ import UserContact from "../components/UserContact";
 import UserReturn from "../components/UserReturn";
 import Admin from "../components/Admin";
 import AddProduct from "../components/AddProduct";
-import menuIcon from "../assets/menuIcon.png";
-import closeIcon from "../assets/closeIcon.png";
+import menuIcon from "../assets/menuIcon.svg";
+import closeIcon from "../assets/closeIcon.svg";
 import axios from 'axios';
 import baseurl from "../url";
 
@@ -185,13 +185,13 @@ export default function Profile() {
                   {menu == "admin" ? (
                     <img
                       className="inline-block scale-105 h-6"
-                      src="./src/assets/arrowDropUp.png"
+                      src="./src/assets/arrowDropUp.svg"
                       alt="DrowUp"
                     />
                   ) : (
                     <img
                       className="inline-block scale-105 h-6"
-                      src="./src/assets/arrowDropDown.png"
+                      src="./src/assets/arrowDropDown.svg"
                       alt="DropDwon"
                     />
                   )}
