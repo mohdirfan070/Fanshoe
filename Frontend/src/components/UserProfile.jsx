@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { userData } from "../App";
 import baseurl from "../url";
+import editIcon from "../assets/editIcon.svg"
 const notify = (msg, type, theme, autoClose) => {
   toast(msg, { type, theme, autoClose });
 };
@@ -267,7 +268,7 @@ export default function UserProfile(prop) {
               Change Information{" "}
               <img
                 className="inline-block"
-                src="./src/assets/editIcon.svg"
+                src={editIcon}
                 alt="EditIcon"
               />{" "}
             </button>

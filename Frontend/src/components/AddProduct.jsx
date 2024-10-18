@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 import ChangeProduct from "./ChangeProduct";
-
-
+import uploadIcon from "../assets/uploadIcon.svg";
+import editIcon from "../assets/editIcon.svg";
 export default function AddProduct() {
   const [updateproduct, setUpdateProduct] = useState(true);
   const {
@@ -16,24 +16,21 @@ export default function AddProduct() {
     toast(msg, { type, theme, autoClose });
   };
 
-  const [inpData , setInpData ] = useState({
-    id:"",
-    title:"",
-    category:"",
-    description:"",
-    price:0,
-    discount:0,
-    stock:0,
-    unit:"",
-    active:false,
-})
+  const [inpData, setInpData] = useState({
+    id: "",
+    title: "",
+    category: "",
+    description: "",
+    price: 0,
+    discount: 0,
+    stock: 0,
+    unit: "",
+    active: false,
+  });
 
-
-const handleChange = (e)=>{
-  setInpData({...inpData,[e.target.name]:e.target.value});
-}
-
-
+  const handleChange = (e) => {
+    setInpData({ ...inpData, [e.target.name]: e.target.value });
+  };
 
   const [images, setImages] = useState({
     image1: "",
@@ -56,8 +53,12 @@ const handleChange = (e)=>{
     // const imagesForm = new FormData();
     // imagesForm.append("image", imageData);
     try {
-      const res2 = await axios.post("/apiv1/addproductinfo", { data } , { withCredentials: true });
-     
+      const res2 = await axios.post(
+        "/apiv1/addproductinfo",
+        { data },
+        { withCredentials: true }
+      );
+
       if (res2.data.status) {
         notify(res2.data.msg, "success", "light", 2000);
       } else {
@@ -72,11 +73,8 @@ const handleChange = (e)=>{
   return (
     <section className="right-div min-h-[795px]    z-[555] flex-auto rounded-lg min-w-[320px] max-w-[900px] bg-slate-100">
       <div className="p-4 sticky top-0  bg-slate-100  border-b-2 drop-shadow-sm flex items-center w-full justify-between">
-             <p className=" text-xl font-medium font3">
-             {
-        updateproduct ? <>Update Product </> : <>Add Product</>
-      }      
-
+        <p className=" text-xl font-medium font3">
+          {updateproduct ? <>Update Product </> : <>Add Product</>}
         </p>
 
         <section className="flex gap-x-1">
@@ -92,32 +90,30 @@ const handleChange = (e)=>{
                 onClick={() => setUpdateProduct(!updateproduct)}
                 className="bg-blue-600 py-2 px-4 rounded-md text-white"
               >
-               Update Product Info{" "}
+                Update Product Info{" "}
                 <img
                   className="inline-block backdrop-invert-0 font2 "
-                  src="./src/assets/editIcon.svg"
+                  src={editIcon}
                   alt="EditIcon"
                 />{" "}
               </button>
             </>
           ) : (
             <>
-            
-            <button className="text-white bg-red-600 py-2 px-4 rounded-md font2 font-medium ">
-              Update
-            </button>
-            <button
+              <button className="text-white bg-red-600 py-2 px-4 rounded-md font2 font-medium ">
+                Update
+              </button>
+              <button
                 onClick={() => setUpdateProduct(!updateproduct)}
                 className=" bg-blue-600 py-2 px-4 rounded-md text-white font-base "
               >
-                  Add Product
-                </button>
+                Add Product
+              </button>
             </>
           )}
         </section>
       </div>
 
-          
       {updateproduct ? (
         <ChangeProduct />
       ) : (
@@ -144,7 +140,8 @@ const handleChange = (e)=>{
                       pattern: /^[\d]+$/,
                       minLength: 4,
                       maxLength: 8,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
                     name="id"
@@ -169,7 +166,8 @@ const handleChange = (e)=>{
                     {...register("title", {
                       required: true,
                       maxLength: 25,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
                     name="title"
@@ -194,7 +192,8 @@ const handleChange = (e)=>{
                   <input
                     {...register("category", {
                       required: true,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     title="PLease Follow the Given Syntax"
                     className="p-4 min-w-[70%] rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
@@ -219,7 +218,8 @@ const handleChange = (e)=>{
                     {...register("description", {
                       required: true,
                       maxLength: 150,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     cols={35}
                     rows={3}
                     aria-disabled
@@ -252,7 +252,8 @@ const handleChange = (e)=>{
                       pattern: /^[\d]+$/,
                       min: 10,
                       required: true,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
                     name="price"
@@ -278,7 +279,8 @@ const handleChange = (e)=>{
                       required: true,
                       maxLength: 2,
                       min: 10,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
                     name="discount"
@@ -303,7 +305,8 @@ const handleChange = (e)=>{
                       required: true,
                       pattern: /^[\d]+$/,
                       min: 1,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
                     name="stock"
@@ -326,7 +329,8 @@ const handleChange = (e)=>{
                   <input
                     {...register("unit", {
                       required: true,
-                    })} onChange={handleChange}
+                    })}
+                    onChange={handleChange}
                     className="p-4 rounded-lg text-lg font2 font-semibold   outline-none hover:outline-slate-300 focus:outline-blue-400"
                     type="text"
                     name="unit"
@@ -342,7 +346,8 @@ const handleChange = (e)=>{
                 <div className="name-div p-3 ">
                   <select
                     id="status"
-                    {...register("status", { required: true })} onChange={handleChange}
+                    {...register("status", { required: true })}
+                    onChange={handleChange}
                     className="p-3  outline-none hover:outline-slate-300 focus:outline-blue-400 font2 rounded bg-slate-50"
                   >
                     <option value="true">Active</option>
@@ -380,7 +385,7 @@ const handleChange = (e)=>{
                         Image 1
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src={uploadIcon}
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -412,7 +417,7 @@ const handleChange = (e)=>{
                         Image 2
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src={uploadIcon}
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -443,7 +448,7 @@ const handleChange = (e)=>{
                         Image 3
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src={uploadIcon}
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -474,7 +479,7 @@ const handleChange = (e)=>{
                         Image 4
                         <img
                           className="inline-block"
-                          src="./src/assets/uploadIcon.svg"
+                          src={uploadIcon}
                           alt="uploadIcon"
                         />{" "}
                       </>
@@ -498,6 +503,5 @@ const handleChange = (e)=>{
         </form>
       )}
     </section>
-
   );
 }
