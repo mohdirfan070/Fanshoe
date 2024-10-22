@@ -12,17 +12,17 @@ const notify = (msg, type, theme, autoClose) => {
 
 const fetchProducts = async (page) => {
   try {
-    localStorage.setItem("page",page);
+    // localStorage.setItem("page",page);
     const res = await axios.get( baseurl+`/products/${page}`,{withCredentials:true});
     
-    let previousValue = localStorage.getItem("products") && JSON.parse(localStorage.getItem("products")) || [] ;
-    if (!previousValue) {
-      previousValue = [];
-    }
+    // let previousValue = localStorage.getItem("products") && JSON.parse(localStorage.getItem("products")) || [] ;
+    // if (!previousValue) {
+    //   previousValue = [];
+    // }
     // previousValue.map(ele=>ele.filter(ele=>ele.id!=res.data.data.map))
-    res.data.data && previousValue.push(res.data.data);
+    // res.data.data && previousValue.push(res.data.data);
     
-      localStorage.setItem("products",JSON.stringify(previousValue));
+      // localStorage.setItem("products",JSON.stringify(previousValue));
   
     // console.log(res)
     if (!res.data ) throw res;
@@ -40,9 +40,9 @@ export default function Home() {
   const [inittialProducts , setInitialProducts ] = useState([]) 
   const [page , setPage] = useState(0);
   const [products, setProducts] = useState([]);
- let previousValue = localStorage.getItem("products") && JSON.parse(localStorage.getItem("products"))
+//  let previousValue = localStorage.getItem("products") && JSON.parse(localStorage.getItem("products"))
   useEffect(() => {
-      localStorage.getItem('page') <= page && fetchProducts(page)
+fetchProducts(page)
       .then((result) => {
       //  console.log(result)
     
